@@ -8,6 +8,8 @@
 
 #include "_printf.c"
 
+int _put_char(char c);
 int _printf(const char *format, ...);
+int _print_cases(const char *format, va_list _arguments);
 
 #endif

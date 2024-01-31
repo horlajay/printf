@@ -8,42 +8,31 @@
 int _printf(const char *format, ...)
 {
 	int printed_char;
-	int sizeof_string;
-	int a;
-	char c;
-	char *s;
 
-	va_list(args);
+	va_list(_arguments);
+
 	printed_char = 0;
-	sizeof_string = strlen(format);
-	va_start(args, format);
+
+	va_start(_arguments, format);
+
 	if (format == NULL)
 		return (-1);
-	for (a = 0; a < sizeof_string; a++)
+
+	while (*format != '\0')
 	{
-		if (*format != '%')
-		{
-			write(1, format, 1);
-			printed_char++;
-			format++; }
-		else
+		if (format == '%')
 		{
 			format++;
-			if (*format == 'c')
-			{
-				c = va_arg(args, int);
-				write(1, &c, 1);
-				printed_char++;
-				format++; }
-			else if (*format == 's')
-			{
-				s = va_arg(args, char *);
-				write(1, s, strlen(s));
-				printed_char = printed_char + strlen(s);
-				format++; }
-			else if (*format == '%')
-			{
-				write(1, format, 1);
-				printed_char++; } } }
-	va_end(args);
-	return (printed_char); }
+			printed_char += _print_cases(format, _arguments);
+		}
+		else
+		{
+			printed_char += write(1, &(*format), 1);
+			format++;
+		}
+	}
+
+	va_end(_arguments);
+
+	return (printed_char);
+}
