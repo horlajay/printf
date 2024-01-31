@@ -1,58 +1,64 @@
 #include "main.h"
+
 /**
- * _printf - it is a function that prints formatted output.
- * @format: it is a pointer to a constant string.
- *
- * Return:the number of characters printed.
+ * _printf - for printing formatted output
+ * @format: first arguement
+ * Return:  the number of characters printed
  */
 
 int _printf(const char *format, ...)
 {
 	int printed_char = 0;
+	int sizeof_string;
+	char c;
+	char *s;
+	int a = 0;
 
-	va_list(args_lists);
+	sizeof_string = strlen(format);
+	va_list(args);
+	va_start(args, format);
 
 	if (format == NULL)
-		return (-1);
-	va_start(args_lists, format);
-
-	while (*format != '\0')
 	{
-		if (*format != '%')
+		return (-1);
+	}
+	else
+	{
+		for (a = 0; a < sizeof_string; a++)
 		{
-			write(1, format, 1);
-			printed_char++;
-		}
-		else
-		{
-			format++;
-			switch (*format)
+			if (*format != '%')
 			{
-				case 'c':
+				write(1, format, 1);
+				printed_char++;
+				format++;
+			}
+			else
+			{
+				format++;
+				{
+					if (*format == 'c')
 					{
-						char c = va_arg(args_lists, int);
-
+						c = va_arg(args, int);
 						write(1, &c, 1);
 						printed_char++;
-						break;
+						format++;
 					}
-				case ('s'):
+					else if (*format == 's')
 					{
-						char *s = va_arg(args_lists, char *);
-
-						write(1, &s, strlen(s));
-						printed_char += strlen;
+						*s = va_arg(args, char*);
+						write(1, s, strlen(s));
+						printed_char = printed_char + sizeof_string;
+						format++;
 					}
-				case ('%'):
+					else if (*format == '%')
+					{
 						write(1, format, 1);
 						printed_char++;
-						break;
-				default:
-						break;
+					}
+				}
 			}
-		format++;
+		}
 	}
-
-		va_end(args_lists);
-		return (printed_char);
+	va_end(args);
+	return (printed_char);
 }
