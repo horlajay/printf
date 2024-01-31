@@ -5,7 +5,6 @@
  * @format : first aguement
  * Return: returns printed.
  */
-
 int _printf(const char *format, ...)
 {
 	int printed_char;
