@@ -43,7 +43,6 @@ int _printf(const char *format, ...)
 			else if (*format == '%')
 			{
 				write(1, format, 1);
-				printed_char++;
-				format++ } } }
+				printed_char++; } } }
 	va_end(args);
 	return (printed_char); }
