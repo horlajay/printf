@@ -11,5 +11,7 @@
 int _put_char(char c);
 int _printf(const char *format, ...);
 int _print_cases(const char *format, va_list _arguments);
+int output_strings(va_list _arguments);
+int _strlen(char *st);
 
 #endif
