@@ -17,7 +17,7 @@ int _printf(const char *format, ...)
 	va_start(args, format);
 	if (format == NULL)
 		return (-1);
-	for (a = 0; a < sizeof_string -1; a++)
+	for (a = 0; a < sizeof_string; a++)
 	{
 		if (*format != '%')
 		{
