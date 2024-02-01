@@ -6,7 +6,7 @@
  */
 int _printf(const char *format, ...)
 {
-	va_list(args);
+	va_list (args);
 	int printed_char;
 	int sizeof_string;
 	int a;
@@ -17,7 +17,7 @@ int _printf(const char *format, ...)
 	va_start(args, format);
 	if (format == NULL)
 		return (-1);
-	for (a = 0; a < sizeof_string; a++)
+	for (a = 0; a < sizeof_string -1; a++)
 	{
 		if (*format != '%')
 		{
