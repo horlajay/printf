@@ -37,10 +37,11 @@ int _printf(const char *format, ...)
 			{
 				s = va_arg(args, char *);
 				write(1, s, strlen(s));
-				printed_char = printed_char + strlen(s); }
+				printed_char = printed_char + strlen(s);
+				format++; }
 			else if (*format == '%')
 			{
 				write(1, format, 1);
 				printed_char++;	} } }
 	va_end(args);
-	return (printed_char - 1); }
+	return (printed_char); }
