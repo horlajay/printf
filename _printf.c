@@ -1,20 +1,18 @@
 #include "main.h"
-
 /**
  * _printf - for printing varied arguements
  * @format : first aguement
  * Return: returns printed.
  */
-
 int _printf(const char *format, ...)
 {
+	va_list(args);
 	int printed_char;
 	int sizeof_string;
 	int a;
 	char c;
 	char *s;
 
-	va_list(args);
 	printed_char = 0;
 	sizeof_string = strlen(format);
 	va_start(args, format);
