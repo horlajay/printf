@@ -11,12 +11,13 @@ int _printf(const char *format, ...)
 	int size_of_string;
 	char c;
 	char *s;
+	int a;
 
 	size_of_string = strlen(format);
 	va_start(args, format);
 	if (format == NULL)
 		return (-1);
-	for (int a = 0; a < size_of_string; a++)
+	for (a = 0; a < size_of_string; a++)
 	{
 		if (*format == '\0')
 			break;
@@ -43,6 +44,7 @@ int _printf(const char *format, ...)
 			else if (*format == '%')
 			{
 				write(1, format, 1);
-				printed_char++; } } }
+				printed_char++;
+				format++; } } }
 	va_end(args);
 	return (printed_char); }
