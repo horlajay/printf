@@ -41,6 +41,7 @@ int _printf(const char *format, ...)
 			else if (*format == '%')
 			{
 				write(1, format, 1);
-				printed_char++; } } }
+				printed_char++;
+		       		fortmat++; } } }
 	va_end(args);
 	return (printed_char); }
