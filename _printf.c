@@ -10,7 +10,7 @@ int _printf(const char *format, ...)
 	int printed_char, size_of_string, a;
 	char c, *s;
 
-	size_of_string = sizeof(format);
+	size_of_string = strlen(format);
 	va_start(args, format);
 	if (format == NULL)
 		return (-1);
@@ -22,7 +22,7 @@ int _printf(const char *format, ...)
 		{
 			write(1, format, 1);
 			printed_char++;
-			format++; }
+		 }
 		else if (*format == '%')
 		{
 			format++;
@@ -31,17 +31,17 @@ int _printf(const char *format, ...)
 				c = va_arg(args, int);
 				write(1, &c, 1);
 				printed_char++;
-				format++; }
+			}
 			else if (*format == 's')
 			{
 				s = va_arg(args, char *);
-				write(1, s, sizeof(s));
-				printed_char = printed_char + sizeof(s);
+				write(1, s, strlen(s));
+				printed_char = printed_char + strlen(s);
 				format++; }
 			else if (*format == '%')
 			{
 				write(1, format, 1);
 				printed_char++;
-				format++; } } }
+			 } } }
 	va_end(args);
 	return (printed_char); }
