@@ -22,7 +22,7 @@ int _printf(const char *format, ...)
 		{
 			write(1, format, 1);
 			printed_char++;
-		 }
+			format++; }
 		else if (*format == '%')
 		{
 			format++;
@@ -31,7 +31,7 @@ int _printf(const char *format, ...)
 				c = va_arg(args, int);
 				write(1, &c, 1);
 				printed_char++;
-			}
+				fprmat++; }
 			else if (*format == 's')
 			{
 				s = va_arg(args, char *);
@@ -42,6 +42,6 @@ int _printf(const char *format, ...)
 			{
 				write(1, format, 1);
 				printed_char++;
-			 } } }
+			 	format++; } } }
 	va_end(args);
 	return (printed_char); }
