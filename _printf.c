@@ -7,8 +7,8 @@
 int _printf(const char *format, ...)
 {
 	va_list(args);
-	int printed_char, int a, int size_of_string;
-	char c, char *s;
+	int printed_char, a, size_of_string;
+	char c, *s;
 
 	size_of_string = strlen(format);
 	va_start(args, format);
