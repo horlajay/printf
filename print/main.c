@@ -2,8 +2,7 @@
 
 int main(void)
 {
-	char *s = "kojo";
-	_printf("hello %s", s);
+	_printf("Complete the sentence: You %s nothing, Jon Snow.\n", (char *)0);
 
 	return (0);
 }
