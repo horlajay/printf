@@ -41,7 +41,7 @@ int handle_strings(va_list args)
  * Return: returns the number of the printed
  */
 
-int handle_percent(va_list args)
+int handle_percent(void)
 {
 	char ch;
 

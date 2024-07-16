@@ -27,7 +27,7 @@ int parse_format(const char *format, va_list args)
 					i++;
 					break;
 				case '%':
-					num_p += handle_percent(args);
+					num_p += handle_percent();
 					i++;
 					break;
 				default:
