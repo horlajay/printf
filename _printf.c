@@ -19,8 +19,5 @@ int _printf(const char *format, ...)
 	num_p += parse_format(format, args);
 	va_end(args);
 
-	write(1, '\n', 1);
-	num_p++;
-
 	return (num_p);
 }
