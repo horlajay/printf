@@ -28,7 +28,7 @@ int handle_strings(va_list args)
 	s = va_arg(args, char *);
 	if (s == NULL)
 	{
-		s = "(nil)";
+		s = "(null)";
 	}
 	write(1, s, strlen(s));
 
