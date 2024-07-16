@@ -37,7 +37,6 @@ int handle_strings(va_list args)
 
 /**
  * handle_percent - for handling the percent
- * @args: the va_list element as the argument
  * Return: returns the number of the printed
  */
 
