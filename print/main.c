@@ -2,7 +2,7 @@
 
 int main(void)
 {
-	_printf("%c", '\0');
+	_printf("%!\n");
 
 	return (0);
 }
