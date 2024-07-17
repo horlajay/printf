@@ -38,15 +38,15 @@ int parse_format(const char *format, va_list args)
 					break;
 				default:
 					write(1, "%", 1);
-					write(1, &format[i], 1);
+					write(1, &format[i + 1], 1);
 					num_p += 2;
+					i++;
 					break;
 			}
 		}
 		else
 		{
 			write(1, &format[i], sizeof(char));
-			num_p++;
-		}
+			num_p++; }
 		i++; }
 	return (num_p); }
