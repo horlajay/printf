@@ -18,6 +18,7 @@ int parse_format(const char *format, va_list args)
 		{
 			if (format[i + 1] == '\0')
 			{
+				i++;
 				break;
 			}
 			switch (format[i + 1])
