@@ -18,12 +18,9 @@ int parse_format(const char *format, va_list args)
 		{
 			if (format[i + 1] == '\0')
 			{
-				write(1, "%", 1);
-				num_p++;
 				break;
 			}
-			i++;
-			switch (format[i])
+			switch (format[i + 1])
 			{
 				case 'c':
 					num_p += handle_char(args);
@@ -39,17 +36,15 @@ int parse_format(const char *format, va_list args)
 					break;
 				default:
 					write(1, "%", 1);
-					write(1, &format[i], 1);
+					write(1, &format[i + 1], 1);
 					num_p += 2;
+					i++;
 					break;
 			}
 		}
 		else
 		{
 			write(1, &format[i], sizeof(char));
-			num_p++;
-		}
-		i++;
-	}
-	return (num_p);
-}
+			num_p++; }
+		i++; }
+	return (num_p); }
