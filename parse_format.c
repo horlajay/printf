@@ -16,11 +16,6 @@ int parse_format(const char *format, va_list args)
 	{
 		if (format[i] == '%')
 		{
-			if (format[i + 1] == '\0')
-			{
-				write(1, "%", 1);
-				num_p++;
-				break; }
 			i++;
 			switch (format[i])
 			{
@@ -37,9 +32,6 @@ int parse_format(const char *format, va_list args)
 					i++;
 					break;
 				default:
-					write(1, "%", 1);
-					write(1, &format[i], 1);
-					num_p += 2;
 					break; } }
 		else
 		{
