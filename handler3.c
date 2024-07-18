@@ -8,13 +8,13 @@
 
 int handle_binary(va_list args)
 {
-	unsigned int num;
+	unsigned long int num;
 	char buffer[33];
 	int i, len;
 
 	i = 0;
 	len = 0;
-	num = va_arg(args, unsigned int);
+	num = va_arg(args, unsigned long int);
 
 	if (num == 0)
 	{
