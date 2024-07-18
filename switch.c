@@ -26,6 +26,10 @@ int _switch(const char *format, va_list args, int *i, int num_p)
 			num_p += handle_int(args);
 			(*i)++;
 			break;
+		case 'b':
+			num_p += handle_binary(args);
+			(*i)++;
+			break;
 		case '%':
 			num_p += handle_percent();
 			(*i)++;
