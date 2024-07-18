@@ -8,20 +8,21 @@
 
 int handle_binary(va_list args)
 {
-	unsigned long int num;
+	unsigned int num;
 	char buffer[33];
 	int i, len;
 
 	i = 0;
 	len = 0;
-	num = va_arg(args, unsigned long int);
+	num = va_arg(args, unsigned int);
 
 	if (num == 0)
 	{
 		buffer[i] = '0';
 		buffer[i++] = '\0';
-		write(1, buffer, 1);
-		return (1);
+		len = strlen(buffer);
+		write(1, buffer, len);
+		return (len);
 	}
 
 	while (num > 0)
