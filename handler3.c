@@ -19,10 +19,9 @@ int handle_binary(va_list args)
 	if (num == 0)
 	{
 		buffer[i] = '0';
-		buffer[i++] = '\0';
-		len = strlen(buffer);
-		write(1, buffer, len);
-		return (len);
+		buffer[i + 1] = '\0';
+		write(1, buffer, 1);
+		return (1);
 	}
 
 	while (num > 0)
@@ -35,7 +34,7 @@ int handle_binary(va_list args)
 	buffer[i] = '\0';
 
 	reverse_string(buffer, i);
-	len = strlen(buffer);
+	len = i;
 	write(1, buffer, len);
 
 	return (len);
