@@ -33,7 +33,7 @@ int handle_hex(va_list args)
 			buffer[i] = remainder + '0';
 		else
 			buffer[i] = (remainder - 10) + 'a';
-		num = num / 2;
+		num = num / 16;
 		i++;
 	}
 
