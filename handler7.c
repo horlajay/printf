@@ -10,7 +10,7 @@ int handle_upper_hex(va_list args)
 {
 	unsigned int num;
 	char buffer[33];
-	int i, len, remainder;
+	int i, len;
 	const char *hex_digits;
 
 
