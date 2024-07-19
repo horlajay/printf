@@ -1,5 +1,4 @@
 #include "main.h"
-
 /**
  * _switch - for using the switch syntax to parse the format string
  * @format: the string
@@ -8,7 +7,6 @@
  * @num_p: the number of characters printed
  * Return: returns an int
  */
-
 int _switch(const char *format, va_list args, int *i, int num_p)
 {
 	switch (format[*i + 1])
@@ -26,8 +24,24 @@ int _switch(const char *format, va_list args, int *i, int num_p)
 			num_p += handle_int(args);
 			(*i)++;
 			break;
+		case 'o':
+			num_p += handle_octal(args);
+			(*i)++;
+			break;
+		case 'x':
+			num_p += handle_hex(args);
+			(*i)++;
+			break;
+		case 'X':
+			num_p += handle_upper_hex(args);
+			(*i)++;
+			break;
 		case 'b':
 			num_p += handle_binary(args);
+			(*i)++;
+			break;
+		case 'u':
+			num_p += handle_unsigned_int(args);
 			(*i)++;
 			break;
 		case '%':
