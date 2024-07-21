@@ -33,20 +33,21 @@ int handle_char(va_list args, char *buffer, int *buf_index)
 int handle_strings(va_list args, char *buffer, int *buf_index)
 {
 	char *s;
-	int i, len;
-
+	int i;
+	
+	i = 0;
 	s = va_arg(args, char *);
 
 	if (s == NULL)
 		s = "(null)";
-	len = strlen(s);
-
-	for (i = 0; i < len; i++)
+	
+	while (str[i])
 	{
-		buffer[*buf_index] = s[i];
-		(*buf_index)++;
 		if (*buf_index >= BUFFER_SIZE)
 			flush_buffer(buffer, buf_index);
+		buffer[*buf_index] = str[i];
+		(*buf_index)++;
+		i++;
 	}
 
 	return (i);
