@@ -12,6 +12,9 @@ int _printf(const char *format, ...)
 	char buffer[BUFFER_SIZE];
 	int buf_index, num_p, i;
 
+	if (format == NULL)
+		return (-1);
+
 	buf_index = 0;
 	num_p = 0;
 	i = 0;
