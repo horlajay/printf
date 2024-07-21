@@ -28,6 +28,8 @@ int _printf(const char *format, ...)
 			i++;
 			if (format[i] == '\0')
 			{
+				flush_buffer(buffer, &buf_index);
+				va_end(args);
 				return (-1);
 			}
 			switch (format[i])
@@ -57,7 +59,7 @@ int _printf(const char *format, ...)
 					num_p += handle_upper_hex(args, buffer, &buf_index);
 					i++;
 					break;
-				case '0':
+				case 'o':
 					num_p += handle_octal(args, buffer, &buf_index);
 					i++;
 					break;
