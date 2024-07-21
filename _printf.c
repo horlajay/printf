@@ -81,10 +81,7 @@ int _printf(const char *format, ...)
 		else
 		{
 			if (buf_index + 1 > BUFFER_SIZE)
-			{
 				flush_buffer(buffer, &buf_index);
-			}
-			buf_index;
 			buffer[buf_index++] = format[i];
 			num_p++;
 		}
