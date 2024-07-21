@@ -41,4 +41,3 @@ int handle_upper_hex(va_list args)
 	write(1, buffer, len);
 
 	return (len);
-}
