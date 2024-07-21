@@ -41,11 +41,11 @@ int handle_strings(va_list args, char *buffer, int *buf_index)
 	if (s == NULL)
 		s = "(null)";
 	
-	while (str[i])
+	while (s[i])
 	{
 		if (*buf_index >= BUFFER_SIZE)
 			flush_buffer(buffer, buf_index);
-		buffer[*buf_index] = str[i];
+		buffer[*buf_index] = s[i];
 		(*buf_index)++;
 		i++;
 	}
