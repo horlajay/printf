@@ -53,6 +53,9 @@ int _printf(const char *format, ...)
 				case 'X':
 					num_p += handle_upper_hex(args, buffer, &buf_index);
 					break;
+				case 'S':
+					num_p += handle_custom_string(args, buffer, &buf_index);
+					break;
 				case 'o':
 					num_p += handle_octal(args, buffer, &buf_index);
 					break;
