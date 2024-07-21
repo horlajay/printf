@@ -37,39 +37,30 @@ int _printf(const char *format, ...)
 				case 'd':
 				case 'i':
 					num_p += handle_int(args, buffer, &buf_index);
-					i++;
 					break;
 				case 'b':
 					num_p += handle_binary(args, buffer, &buf_index);
-					i++;
 					break;
 				case 'c':
 					num_p += handle_char(args, buffer, &buf_index);
-					i++;
 					break;
 				case 's':
 					num_p += handle_strings(args, buffer, &buf_index);
-					i++;
 					break;
 				case 'x':
 					num_p += handle_hex(args, buffer, &buf_index);
-					i++;
 					break;
 				case 'X':
 					num_p += handle_upper_hex(args, buffer, &buf_index);
-					i++;
 					break;
 				case 'o':
 					num_p += handle_octal(args, buffer, &buf_index);
-					i++;
 					break;
 				case 'u':
 					num_p += handle_unsigned_int(args, buffer, &buf_index);
-					i++;
 					break;
 				case '%':
 					num_p += handle_percent(buffer, &buf_index);
-					i++;
 					break;
 				default:
 					if (buf_index + 2 > BUFFER_SIZE)
