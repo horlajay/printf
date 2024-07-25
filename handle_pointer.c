@@ -14,7 +14,7 @@ int handle_pointer(va_list args, char *buffer, int *buf_index)
 	uintptr_t num;
 	char temp_buffer[17];
 	const char *null_str;
-	int i, len digit;
+	int i, len, digit;
 
 	len = 0;
 

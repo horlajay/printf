@@ -24,4 +24,5 @@ int handle_unsigned_int(va_list args, char *buffer, int *buf_index);
 int handle_octal(va_list args, char *buffer, int *buf_index);
 int handle_upper_hex(va_list args, char *buffer, int *buf_index);
 int handle_custom_string(va_list args, char *buffer, int *buf_index);
+
 #endif /*MAIN_H*/
