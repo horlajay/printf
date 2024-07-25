@@ -62,6 +62,9 @@ int _printf(const char *format, ...)
 				case 'u':
 					num_p += handle_unsigned_int(args, buffer, &buf_index);
 					break;
+				case 'p':
+					num_p += handle_pointer(args, buffer, &buf_index);
+					break;
 				case '%':
 					num_p += handle_percent(buffer, &buf_index);
 					break;

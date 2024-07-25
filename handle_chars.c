@@ -34,13 +34,13 @@ int handle_strings(va_list args, char *buffer, int *buf_index)
 {
 	char *s;
 	int i;
-	
+
 	i = 0;
 	s = va_arg(args, char *);
 
 	if (s == NULL)
 		s = "(null)";
-	
+
 	while (s[i])
 	{
 		if (*buf_index >= BUFFER_SIZE)
